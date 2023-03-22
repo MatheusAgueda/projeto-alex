@@ -1,80 +1,124 @@
+@charset "UTF-8";
+
+/* Estilos gerais */
 body {
-    background-color: #1c1c1c;
-    color: #f2f2f2;
-    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 16px;
-    line-height: 1.6;
+    color: #ddd;
+    background-color: #1a1a1a;
+}
+
+/* Estilos para o topo da página */
+.top-frame {
+    background-color: #ff69b4;
+    color: #fff;
+    padding: 16px;
+    text-align: center;
+}
+
+.top-frame h1 {
+    margin: 0;
+    font-size: 36px;
+}
+
+.subtitle {
+    font-size: 18px;
+    margin: 8px 0;
+}
+
+nav ul {
+    list-style-type: none;
     margin: 0;
     padding: 0;
+    display: flex;
+    justify-content: center;
 }
 
-.top-frame {
-    background-color: #292929;
-    border-radius: 5px;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
-    margin: 30px auto 0;
-    max-width: 600px;
-    padding: 20px;
+nav li {
+    margin: 0 16px;
 }
 
-.bottom-frame {
-    background-color: #292929;
-    border-radius: 5px;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
-    margin: 30px auto;
-    max-width: 600px;
-    padding: 20px;
+nav a {
+    color: #fff;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+nav a:hover {
+    color: #ff69b4;
+}
+
+/* Estilos para a caixa de histórico de chat */
+.response {
+    margin: 16px;
+    padding: 16px;
+    border: 2px solid #ff69b4;
+    background-color: #333;
+    border-radius: 8px;
+    overflow-y: scroll;
+    height: 400px;
+}
+
+.response p {
+    margin: 8px 0;
 }
 
 .message {
-    margin: 10px 0;
-    padding: 5px 10px;
+    font-size: 16px;
+    padding: 8px;
+    border-radius: 4px;
+    border: 2px solid #ff69b4;
 }
 
-.message.user {
-    background-color: #ff00bf;
-    border-radius: 5px 5px 0 5px;
-    float: right;
+.user {
+    background-color: #5a5a5a;
 }
 
-.message.chatbot {
-    background-color: #555;
-    border-radius: 5px 5px 5px 0;
-    float: left;
+.bot {
+    background-color: #444;
+}
+
+.typing-indicator {
+    font-size: 14px;
+    font-style: italic;
+}
+
+/* Estilos para a caixa de entrada de chat */
+.bottom-frame {
+    background-color: #333;
+    border-top: 2px solid #222;
+    padding: 16px;
+    text-align: center;
 }
 
 .question {
     margin: 0;
-}
-
-.button {
-    background-color: #ff00bf;
-    border: none;
-    border-radius: 5px;
-    color: white;
-    cursor: pointer;
-    font-size: 16px;
-    padding: 10px 20px;
-}
-
-.button:hover {
-    background-color: #218838;
+    font-size: 20px;
 }
 
 input[type="text"] {
+    padding: 8px;
     border: none;
-    border-radius: 5px;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
-    font-size: 16px;
-    padding: 10px;
-    width: 70%;
-    background-color: #333;
-    color: #f2f2f2;
+    border-radius: 4px;
+    width: 60%;
+    margin: 8px 0;
+    background-color: #444;
+    color: #ddd;
 }
 
-.typing-indicator {
-    font-style: italic;
-    margin: 10px 0;
-    padding: 5px 10px;
-    text-align: center;
+.button {
+    padding: 8px;
+    border: none;
+    border-radius: 4px;
+    background-color: #ff69b4;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.button:hover {
+    background-color: #fff;
+    color: #ff69b4;
 }
