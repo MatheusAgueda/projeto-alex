@@ -1,5 +1,6 @@
 body {
-    background-color: #f2f2f2;
+    background-color: #1c1c1c;
+    color: #f2f2f2;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 16px;
     line-height: 1.6;
@@ -8,7 +9,7 @@ body {
 }
 
 .top-frame {
-    background-color: #fff;
+    background-color: #292929;
     border-radius: 5px;
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
     margin: 30px auto 0;
@@ -17,7 +18,7 @@ body {
 }
 
 .bottom-frame {
-    background-color: #fff;
+    background-color: #292929;
     border-radius: 5px;
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
     margin: 30px auto;
@@ -31,13 +32,13 @@ body {
 }
 
 .message.user {
-    background-color: #d2eaf1;
+    background-color: #ff00bf;
     border-radius: 5px 5px 0 5px;
     float: right;
 }
 
 .message.chatbot {
-    background-color: #eaeaea;
+    background-color: #555;
     border-radius: 5px 5px 5px 0;
     float: left;
 }
@@ -47,7 +48,7 @@ body {
 }
 
 .button {
-    background-color: #4CAF50;
+    background-color: #ff00bf;
     border: none;
     border-radius: 5px;
     color: white;
@@ -57,7 +58,7 @@ body {
 }
 
 .button:hover {
-    background-color: #3e8e41;
+    background-color: #218838;
 }
 
 input[type="text"] {
@@ -67,6 +68,8 @@ input[type="text"] {
     font-size: 16px;
     padding: 10px;
     width: 70%;
+    background-color: #333;
+    color: #f2f2f2;
 }
 
 .typing-indicator {
