@@ -1,0 +1,77 @@
+body {
+    background-color: #f2f2f2;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+.top-frame {
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    margin: 30px auto 0;
+    max-width: 600px;
+    padding: 20px;
+}
+
+.bottom-frame {
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    margin: 30px auto;
+    max-width: 600px;
+    padding: 20px;
+}
+
+.message {
+    margin: 10px 0;
+    padding: 5px 10px;
+}
+
+.message.user {
+    background-color: #d2eaf1;
+    border-radius: 5px 5px 0 5px;
+    float: right;
+}
+
+.message.chatbot {
+    background-color: #eaeaea;
+    border-radius: 5px 5px 5px 0;
+    float: left;
+}
+
+.question {
+    margin: 0;
+}
+
+.button {
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 10px 20px;
+}
+
+.button:hover {
+    background-color: #3e8e41;
+}
+
+input[type="text"] {
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    font-size: 16px;
+    padding: 10px;
+    width: 70%;
+}
+
+.typing-indicator {
+    font-style: italic;
+    margin: 10px 0;
+    padding: 5px 10px;
+    text-align: center;
+}

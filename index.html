@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Alex Analista esportiva</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</head>
+
+<body>
+  <div class="top-frame">
+    <h1>Alex Analista esportiva<br><br></h1>
+    <div id="chat-history" class="response"></div>
+  </div>
+
+  <div class="bottom-frame">
+    <form>
+      <label for="input_text">
+        <p class="question">Digite sua pergunta aqui:</p>
+      </label>
+
+      <p>
+        <input type="text" id="input_text" name="input_text" required>
+        <button type="button" onclick="connectChatGPT()" class="button">Enviar</button>
+      </p>
+    </form>
+  </div>
+  <script>
+    const chatHistory = document.getElementById('chat-history');
+
+    function addMessageToChatHistory(message, sender) {
+      const messageHTML = `<p class="message ${sender}">${sender === 'user' ? 'Você' : 'ChatGPT'}: ${message}</p>`;
+      chatHistory.innerHTML += messageHTML;
+    }
+
+    function addTypingIndicator() {
+      const typingIndicatorHTML = `<p class="typing-indicator">ChatGPT está digitando...</p>`;
+      chatHistory.innerHTML += typingIndicatorHTML;
+    }
+
+    function removeTypingIndicator() {
+      const typingIndicator = document.querySelector('.typing-indicator');
+      if (typingIndicator) {
+        typingIndicator.remove();
+      }
+    }
+
+    async function connectChatGPT() {
+      const inputText = document.getElementById('input_text').value;
+      addMessageToChatHistory(inputText, 'user');
+      addTypingIndicator();
+
+      // Send the request to ChatGPT
+      const apiKey = "";
+      const modelEngine = "text-davinci-003";
+      const prompt = inputText;
+      const maxTokens = 2048;
+      const temperature = 0.5;
+
+      const response = await axios.post(
+        "https://api.openai.com/v1/completions", {
+          prompt,
+          max_tokens: maxTokens,
+          temperature,
+          model: modelEngine,
+        }, {
+          headers: {
+            "Content-Type": "application/json",
+            "Authorization": `Bearer ${apiKey}`,
+          },
+        }
+      );
+
+      // Display the response
+      const responseMessage = response.data.choices[0].text.trim();
+      addMessageToChatHistory(responseMessage, 'chatbot');
+      removeTypingIndicator();
+
+      // Speak the response
+      // const utterance = new SpeechSynthesisUtterance(responseMessage);
+      // utterance.lang = 'pt-BR';
+      // utterance.rate = 0.8;
+      // window.speechSynthesis.speak(utterance);
+
+      // Clear the input box
+      document.getElementById('input_text').value = '';
+
+      // Auto-scroll to the bottom of the chat history
+      chatHistory.scrollTop = chatHistory.scrollHeight;
+    }
+
+    document.querySelector('form').addEventListener('submit', (event) => {
+      event.preventDefault();
+      connectChatGPT();
+    });
+  </script>
+</body>
+
+</html>
